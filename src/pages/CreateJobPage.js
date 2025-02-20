@@ -28,9 +28,9 @@ const CreateJobPage = () => {
     console.log(formData)
 
     return (
-        <div className="job">
+        <div className="job-creation">
             <h1>{editMode ? 'Update your Job' : 'Create a Job'}</h1>
-            <div className="job-container">
+            <div className="job-creation-container">
                 <form onSubmit={handleSubmit}>
                     <section>
                         <label htmlFor="title">Entreprise</label>
@@ -43,16 +43,57 @@ const CreateJobPage = () => {
                             value={formData.title}
                         />
 
-                        <label htmlFor="address">Adresse</label>
+                        <label htmlFor="contact">Nom du Contact</label>
                         <input
-                            id="address"
-                            name ="address" 
+                            id="contact"
+                            name ="contact" 
                             type="text"
                             onChange={handleChange}
                             required={true}
-                            value={formData.address}
+                            value={formData.contact}
+                        />
+
+                        <label htmlFor="companyAddress">Adresse</label>
+                        <input
+                            id="companyAddress"
+                            name ="companyAddress" 
+                            type="text"
+                            onChange={handleChange}
+                            required={true}
+                            value={formData.companyAddress}
+                        />
+                        
+                        <label htmlFor="telephone">Téléphone</label>
+                        <input
+                            id="telephone"
+                            name ="telephone" 
+                            type="telephone"
+                            onChange={handleChange}
+                            required={true}
+                            value={formData.telephone}
+                        />
+
+                        <label htmlFor="interventionAddress">Adresse d'intervention</label>
+                        <input
+                            id="interventionAddress"
+                            name ="interventionAddress" 
+                            type="text"
+                            onChange={handleChange}
+                            required={true}
+                            value={formData.interventionAddress}
+                        />
+
+                        <label htmlFor="interventionDate">Date d'intervention</label>
+                        <input
+                            id="interventionDate"
+                            name ="interventionDate" 
+                            type="date"
+                            onChange={handleChange}
+                            required={true}
+                            value={formData.interventionDate}
                         />
                     </section>
+                    <button className="save-job">Enregistrer</button>
                 </form>
             </div>
         </div>
