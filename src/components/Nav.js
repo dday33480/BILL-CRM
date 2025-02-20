@@ -13,9 +13,11 @@ const Nav = () => {
                 <div className="icon" onClick={() => navigate('/jobs')}>
                     Jobs
                 </div>
+                <hr />
                 <div className="icon" onClick={() => navigate('/quotes')}>
                     Devis
                 </div>
+                <hr />
                 <div className="icon" onClick={() => navigate('/')}>
                     Home
                 </div>
