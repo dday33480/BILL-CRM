@@ -1,4 +1,5 @@
 import { useState } from "react"
+import QuotePDF from '../components/pdf/Quote'
 
 const CreateQuotePage = () => {
 
@@ -29,11 +30,11 @@ const CreateQuotePage = () => {
 
     return (
         <div className="create-quote">
-            <h1>{editMode ? 'Update your Quote' : 'Create a Quote'}</h1>
+            <h1>{editMode ? 'Éditer un devis' : 'Créer un devis'}</h1>
             <div className="quote-container">
                 <form onSubmit={handleSubmit}>
                     <section>
-                        <label htmlFor="title">Entreprise</label>
+                        <label htmlFor="title"><u>Entreprise :</u></label>
                         <input
                             id="title"
                             name ="title" 
@@ -42,8 +43,8 @@ const CreateQuotePage = () => {
                             required={true}
                             value={formData.title}
                         />
-
-                        <label htmlFor="address">Adresse</label>
+                        <hr />
+                        <label htmlFor="address"><u>Adresse :</u></label>
                         <input
                             id="address"
                             name ="address" 
@@ -52,8 +53,8 @@ const CreateQuotePage = () => {
                             required={true}
                             value={formData.address}
                         />
-
-                        <label htmlFor="date">Date</label>
+                        <hr />
+                        <label htmlFor="date"><u>Date du devis :</u></label>
                         <input
                             id="date"
                             name ="date" 
@@ -62,8 +63,8 @@ const CreateQuotePage = () => {
                             required={true}
                             value={formData.date}
                         />
-
-                        <label htmlFor="description">Description</label>
+                        <hr />
+                        <label htmlFor="description"><u>Description :</u></label>
                         <textarea
                             id="description"
                             name ="description" 
@@ -73,7 +74,7 @@ const CreateQuotePage = () => {
                             value={formData.description}
                         />
 
-                        <label htmlFor="intervention_date">Date d'intervention</label>
+                        <label htmlFor="intervention_date"><u>Date d'intervention :</u></label>
                         <input
                             id="intervention_date"
                             name ="intervention_date" 
@@ -82,8 +83,13 @@ const CreateQuotePage = () => {
                             required={true}
                             value={formData.intervention_date}
                         />
+                        <hr />
                     </section>
+                    <button className="save-quote">Enregistrer</button>
                 </form>
+            </div>            
+            <div className="pdf-container">
+                <QuotePDF />
             </div>
         </div>
     )
