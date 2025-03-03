@@ -2,12 +2,16 @@ import { Page, Text, View, Document } from "@react-pdf/renderer";
 import { PDFViewer } from "@react-pdf/renderer";
 import { styles } from "./QuoteStyle"
 
+const refId = "#" + new Date().toISOString().split('T')[0].slice(2, 10).replaceAll("-", "") + 
+            new Date().toISOString().split('T')[1].split('.')[0].slice(3, 8).replaceAll(":", "") + "-Q";
+
 export default function QuotePDF() {
     const QPDF = () => (
         <Document>
           <Page size="A4" style={styles.page}>
             <View style={styles.section}>
-              <Text>Section #1</Text>
+              <Text style={styles.header}>DEVIS</Text>
+              <Text>Ref: {refId}</Text>
             </View>
             <View style={styles.section}>
               <Text>Section #2</Text>
@@ -17,8 +21,8 @@ export default function QuotePDF() {
       );
     return ( 
     <div>
-        <div className="w-full h-screen">
-            <PDFViewer width="100%" height="100%">
+        <div style={styles.pdfWindow}>
+            <PDFViewer width="80%" height="100%">
                 <QPDF />
             </PDFViewer>
         </div>
