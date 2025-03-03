@@ -29,11 +29,11 @@ const CreateJobPage = () => {
 
     return (
         <div className="job-creation">
-            <h1>{editMode ? 'Update your Job' : 'Create a Job'}</h1>
+            <h1>{editMode ? 'Éditer une intervention' : 'Créer une intervention'}</h1>
             <div className="job-creation-container">
                 <form onSubmit={handleSubmit}>
                     <section>
-                        <label htmlFor="title">Entreprise</label>
+                        <label htmlFor="title"><u>Entreprise :</u></label>
                         <input
                             id="title"
                             name ="title" 
@@ -42,8 +42,8 @@ const CreateJobPage = () => {
                             required={true}
                             value={formData.title}
                         />
-
-                        <label htmlFor="contact">Nom du Contact</label>
+                        <hr />
+                        <label htmlFor="contact"><u>Nom du Contact :</u></label>
                         <input
                             id="contact"
                             name ="contact" 
@@ -52,8 +52,8 @@ const CreateJobPage = () => {
                             required={true}
                             value={formData.contact}
                         />
-
-                        <label htmlFor="companyAddress">Adresse</label>
+                        <hr />
+                        <label htmlFor="companyAddress"><u>Adresse :</u></label>
                         <input
                             id="companyAddress"
                             name ="companyAddress" 
@@ -62,8 +62,8 @@ const CreateJobPage = () => {
                             required={true}
                             value={formData.companyAddress}
                         />
-                        
-                        <label htmlFor="telephone">Téléphone</label>
+                        <hr />                        
+                        <label htmlFor="telephone"><u>Téléphone :</u></label>
                         <input
                             id="telephone"
                             name ="telephone" 
@@ -72,8 +72,8 @@ const CreateJobPage = () => {
                             required={true}
                             value={formData.telephone}
                         />
-
-                        <label htmlFor="interventionAddress">Adresse d'intervention</label>
+                        <hr />
+                        <label htmlFor="interventionAddress"><u>Adresse d'intervention :</u></label>
                         <input
                             id="interventionAddress"
                             name ="interventionAddress" 
@@ -82,8 +82,8 @@ const CreateJobPage = () => {
                             required={true}
                             value={formData.interventionAddress}
                         />
-
-                        <label htmlFor="interventionDate">Date d'intervention</label>
+                        <hr />
+                        <label htmlFor="interventionDate"><u>Date d'intervention :</u></label>
                         <input
                             id="interventionDate"
                             name ="interventionDate" 
@@ -92,8 +92,10 @@ const CreateJobPage = () => {
                             required={true}
                             value={formData.interventionDate}
                         />
+                        <hr />
                     </section>
                     <button className="save-job">Enregistrer</button>
+                    <button className="invoice-pdf">Créer facture</button>
                 </form>
             </div>
         </div>
