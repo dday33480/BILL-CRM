@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
+import CustomerPage from './pages/CustomerPage'
 import JobPage from './pages/JobPage'
 import CreateJobPage from './pages/CreateJobPage'
 import QuotePage from './pages/QuotePage'
@@ -13,6 +14,7 @@ function App() {
     <Nav/>
     <Routes>
         <Route path='/' element={<Dashboard/>}/>
+        <Route path='/customers' element={<CustomerPage/>}/>
         <Route path='/jobs' element={<JobPage/>}/>
         <Route path='jobs/create' element={<CreateJobPage/>}/>
         <Route path='/quotes' element={<QuotePage/>}/>
