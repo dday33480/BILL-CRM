@@ -22,44 +22,47 @@ const client = new Client({
     database: DB
 })
 
-client.connect()
+//client.connect()
 
 // Database queries \\
-client.query('SELECT * FROM clients', (err, res) => {
-    if (!err) {
+async function select_all_clients() {
+    try {
+        const res = await client.query('SELECT * FROM clients')
         console.log("CLIENTS: ")
         console.log(res.rows)
-    } else {
+        return res.rows
+    } catch (err) {
         console.log(err.message)
+        throw err
     }
-    //client.end()
-})
+}
 
-client.query('ALTER TABLE users ADD COLUMN IF NOT EXISTS user_permissions VARCHAR(35)', (err, res) => {
-    if (!err) {
-        console.log("ALTERED TABLE users")
-    } else {
-        console.log(err.message)
-    }
-})
-
-client.query("UPDATE users SET user_permissions='admin' WHERE user_id = 1", (err, res) => {
-    if (!err) {
-        console.log("UPDATED column value")
-    } else {
-        console.log(err.message)
-    }
-})
-
-client.query('SELECT * FROM users', (err, res) => {
-    if (!err) {
+async function select_all_users() {
+    try {
+        const res = await client.query('SELECT * FROM users')
         console.log("USERS: ")
         console.log(res.rows)
-    } else {
+        return res.rows
+    } catch (err) {
         console.log(err.message)
+        throw err
+    } 
+}
+
+const closeConnection = async() => {
+    try {
+        await client.connect()
+        await select_all_users()
+        await select_all_clients()
+    } catch (err) {
+        console.log(err.message)
+    } finally {
+        await client.end()
+        console.log("Connection closed successfully")
     }
-    client.end()
-})
+}
+
+closeConnection()
 
 app.listen(PORT, () => console.log("server running on PORT " + PORT))
 
