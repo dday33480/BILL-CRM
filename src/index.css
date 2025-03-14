@@ -76,6 +76,101 @@ nav .icon {
     overflow: scroll;
 }
 
+/*------ CustomerPage ------*/
+.customers {
+    padding: 3%;
+    width: 100%;
+}
+
+.customer-container {
+    height: 80vh;
+    overflow: scroll;
+    font-size: 14px;
+}
+
+.create-customer {
+    background-color: seagreen;
+    color: white;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    padding: 1% 1%;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+/*------ CustomerCard ------*/
+.customer-card {
+    display: flex;
+    width: 100%;
+}
+
+.customer-card #link {
+    display: flex;
+    width: 100%;
+}
+
+.customer-card #link > * {
+    background-color: rgb(221, 221, 221);
+    margin: 2px;
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.customer-card .customer-color {
+    width: 15% !important;
+    padding: 0px !important;
+    margin: 2%;
+}
+
+.customer-card .company-container {
+    display: flex;
+    justify-content: center;
+}
+
+.customer-card .contact-container {
+    display: flex;
+    justify-content: center;
+}
+
+.customer-card .company-email-container {
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.customer-card .company-phone-container {
+    display: flex;
+    justify-content: center;
+    min-width: 130px;
+}
+
+.customer-card h4 {
+    display: flex;
+    justify-content: center;
+}
+
+.customer-card .delete-block {
+    display: flex;
+    background-color: rgb(211, 211, 211);
+    width: 50px;
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+.customer-card .delete-block .delete-icon {
+    width: 40%;
+    height: 20%;
+    border-radius: 10px;
+    background-color: rgb(61, 61, 61);
+    display: flex;
+    color: red;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /*------ JobPage ------*/
 .jobs {
