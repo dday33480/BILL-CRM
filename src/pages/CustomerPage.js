@@ -37,12 +37,13 @@ const CustomerPage = () => {
                 Ajouter un nouveau client
             </button>
             <div className="customer-container">
-                {customers.map((filteredcustomer, _index) => (
+                {customers.filter((customer) => customer.company !== "")
+                .map((filteredCustomer, _index) => (
                     <div key={_index}>
                         <CustomerCard
                         id={_index}
                         color={colors[_index] || colors[0]}
-                        customer={filteredcustomer}
+                        customer={filteredCustomer}
                         />
                     </div>
                 ))}
